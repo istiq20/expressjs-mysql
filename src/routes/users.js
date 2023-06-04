@@ -9,4 +9,7 @@ router.post('/', UserController.createNewUser);
 // READ - GET
 router.get('/', UserController.getAllUsers);
 
+// UPDATE - PATCH
+router.patch('/:idUser', UserController.updateUser);
+
 module.exports = router;
