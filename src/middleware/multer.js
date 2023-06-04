@@ -1,5 +1,4 @@
 const multer  = require('multer');
-// const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -8,9 +7,6 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
       const timestamp = new Date().getTime();
       const originalname = file.originalname;
-    //   console.log(file);
-    //   const fileName = file.filename;
-    //   const extension = path.extname(file.originalname);
       cb(null, `${timestamp}-${originalname}`);
     }
 });
