@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 const express = require('express');
 const usersRoutes = require('./routes/users.js');
 const middlewareLogRequest = require('./middleware/logs.js');
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 
