@@ -1,0 +1,11 @@
+{
+  "name": "expressjs-mysql",
+  "version": "1.0.0",
+  "description": "Membuat basic REST API dengan express js (NodeJS) dan MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iis istiqomah",
+  "license": "ISC"
+}
