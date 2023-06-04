@@ -3,8 +3,9 @@ const usersRoutes = require('./routes/users.js');
 const middlewareLogRequest = require('./middleware/logs.js');
 
 const app = express();
-
 const PORT = 8000;
+
+app.use(express.json());
 
 // middleware that is specific to this router
 app.use(middlewareLogRequest);
