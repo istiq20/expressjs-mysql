@@ -8,6 +8,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
+app.use('/assets', express.static('public/images'));
 
 // middleware that is specific to this router
 app.use(middlewareLogRequest);
