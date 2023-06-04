@@ -1,16 +1,10 @@
 const express = require('express');
+const UserController = require('../controller/users.js');
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.json({
-        message: "GET method success"
-    });
-});
+router.get('/', UserController.getAllUsers);
 
-router.post('/', (req, res) => {
-    res.json({
-        message: "POST method success"
-    });
-})
+router.post('/', UserController.createNewUser);
 
 module.exports = router;
