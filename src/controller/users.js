@@ -20,6 +20,13 @@ const getAllUsers = async (req, res) => {
 const createNewUser = async (req, res) => {
     const {body} = req;
 
+    if(!body.email || !body.name || !body.address){
+        return res.status(400).json({
+            message: 'Anda mengirimkan data tidak lengkap',
+            data: null
+        });
+    }
+
     try {
         await UsersModel.createNewUser(body);
         res.json({
@@ -55,16 +62,21 @@ const updateUser = async (req, res) => {
     }
 }
 
-const deleteUser = (req, res) => {
+const deleteUser = async (req, res) => {
     const {idUser} = req.params;
-    res.json({
-        message: 'DELETE user success',
-        data: {
-            id: idUser,
-            name: "iis istiqomah",
-            email: "iisistiqomah@gmail.com"
-        }
-    })
+
+    try {
+        await UsersModel.deleteUser(idUser);
+        res.json({
+            message: 'DELETE user success',
+            data: null
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: 'Server error',
+            serverMessage: error
+        });
+    }
 }
 
 module.exports = {
