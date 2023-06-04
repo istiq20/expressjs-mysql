@@ -27,8 +27,21 @@ const updateUser = (req, res) => {
     })
 }
 
+const deleteUser = (req, res) => {
+    const {idUser} = req.params;
+    res.json({
+        message: 'DELETE user success',
+        data: {
+            id: idUser,
+            name: "iis istiqomah",
+            email: "iisistiqomah@gmail.com"
+        }
+    })
+}
+
 module.exports = {
     getAllUsers,
     createNewUser,
-    updateUser
+    updateUser,
+    deleteUser
 }
